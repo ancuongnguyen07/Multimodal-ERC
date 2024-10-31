@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[parfill]{parskip}
+\usepackage{hyperref}
+\usepackage[useregional]{datetime2}
+\usepackage[toc,page]{appendix}
+
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+\usepackage[T1]{fontenc}
+\usepackage{tgbonum}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage{longtable}
+
+% Define a custom color
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+
+% Define a custom style
+\lstdefinestyle{myStyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    keepspaces=true,                 
+    numbers=left,       
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+}
+
+% Use \lstset to make myStyle the global default
+\lstset{style=myStyle}
+
+\graphicspath{ {./figures/} }
+
+\title{ELEC-E5510: Speech Recognition\\
+    \large Project report: TITLE}
+
+\newcommand{\inlinemaketitle}{{\let\newpage\relax\maketitle}}
+
+\def\sectionautorefname{Section}
+
+\begin{document}
+
+\inlinemaketitle
+\tableofcontents
+% \newpage
+
+% \listoffigures
+% \newpage
+
+% Content of report would be written here
+% \include{./tex/task1.tex}
+% ...
+% \include{./tex/task2.tex}
+
+\printbibliography[heading=bibintoc]
+
+% \newpage
+% \begin{appendices}
+%     \include{tex/appendices}
+% \end{appendices}
+
+\end{document}
