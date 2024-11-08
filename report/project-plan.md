@@ -1,3 +1,5 @@
+# Project Plan Group 21
+
 ## 1. Problem
 Emotion recognition has been increasingly playing an essential role
 in human-computer interactions. Unimodal emotion classifiers, systems
@@ -43,13 +45,43 @@ MELD data set. The baseline models have 3 several variants: unimodal of audio
 , unimodal of text, bimodal of text and audio. 
 
 ### 3.2. Experiments
+Based on the bi-modal baseline model, relying on audio and text, we would
+develop a tri-modal model which utilizes information from audio, text, and
+video. All data source has already-extracted feature sets which we could
+take advantage of without extracting from scratch. However, the referenced
+audio features were extracted by openSMILE which is a bit out-of-date. We
+plan to re-extract the audio features using Word2Vec, which is a more
+cutting-edge model, to see if there is any improvement in the performance
+of emotion recognition system. However, this task is not the top-priority
+in the case that we have a extremely limited amount of time.
 
+In terms of bi-modal approach, we would like mix the combination of data
+sources, e.g. audio-video and text-video. As the baseline model has already
+utilized text-audio, facial expression extracted from video could be a top
+candidate to see if additional video-based information would enhance the
+recognition precision. Moreover, when deal with bi-modality, we have to
+make a wise choice on which fusion model should be implemented. While
+the feature-level approach is able to propagate the inter-modal relationship
+between different data sources, the decision-level method preserve
+the characteristics of each single data class.
 
+Regarding unimodal models, we would try to harden them as efficient as
+possible based on the baseline unimodal model. There are rooms for
+improvement such as accuracy, computation complexity, and resource consumption.
+The most interesting we would like to know is that if a hardened unimodal
+model could outperform a multi-modal model in terms of classification accuracy.
+Another interesting thing needs to be explored is that which single data source
+dominates the overall accuracy of classification.
 
 ## 4. Division of Work
 - Cuong: implement tri-modal emotion recognition system
-- Daniel: TODO!
-- Raihan: TODO!
+- Daniel: implement uni-modal emotion recognition system
+- Raihan: implement bi-modal emotion recognition system
+
+Schedule:
+- 8/11 - 22/11: Implmentation and Experiment
+- 23/11 - 29/11: Result and Conclusion
+- 30/11 - 4/12: Presentation and Final Report
 
 ### My suggestion for groupmates
 I have two other major tasks:
@@ -61,8 +93,8 @@ I have two other major tasks:
   - Daniel/Raihan: improved version of audio.
   - Daniel/Raihan: improved version of text.
 
-**NOTE**: improved version means that your model should have one or many following
-upsides compared to the baseline model:
+**NOTE**: improved version means that your model should have one or many of 
+the following upsides compared to the baseline model:
 - use less parameters
 - less computation
 - higher accuracy
