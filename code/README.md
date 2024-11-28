@@ -2,6 +2,11 @@
 
 This folder contains the code for training and testing a multi-modal emotion classifier using the MELD dataset.
 
+Emotion labels:
+```json
+{'neutral': 0, 'surprise': 1, 'fear': 2, 'sadness': 3, 'joy': 4, 'disgust': 5, 'anger': 6}
+```
+
 Reference:
 - https://github.com/declare-lab/conv-emotion/tree/master/DialogueRNN
 - Extracted features file: https://github.com/zerohd4869/MM-DFN/blob/main/data/meld/MELD_features_raw1.pkl
