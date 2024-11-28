@@ -17,6 +17,7 @@
 \usepackage{xcolor}
 
 \usepackage{longtable}
+\usepackage{float}
 
 % Define a custom color
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
@@ -44,7 +45,8 @@
 \graphicspath{ {./figures/} }
 
 \title{ELEC-E5510: Speech Recognition\\
-    \large Project report: TITLE}
+    \large Project report: Multimodal Emotion Recognition in Conversations}
+\author{Cuong Nguyen (101559968)}
 
 \newcommand{\inlinemaketitle}{{\let\newpage\relax\maketitle}}
 
@@ -63,12 +65,20 @@
 % \include{./tex/task1.tex}
 % ...
 % \include{./tex/task2.tex}
+\include{tex/intro.tex}
+\include{tex/methods.tex}
+\include{tex/experiments.tex}
+\include{tex/results.tex}
+\include{tex/conclusion.tex}
+\include{tex/div-labor.tex}
+\include{tex/ack.tex}
+
 
 \printbibliography[heading=bibintoc]
 
 % \newpage
-% \begin{appendices}
-%     \include{tex/appendices}
-% \end{appendices}
+\begin{appendices}
+	\include{tex/appendices.tex}
+\end{appendices}
 
 \end{document}
