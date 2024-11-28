@@ -1,5 +1,5 @@
 Test performance..
-Fscore 57.88 accuracy 60.61
+Fscore 57.88 accuracy 60.61 at epoch 15
               precision    recall  f1-score   support
 
            0     0.7132    0.8256    0.7653    1256.0
