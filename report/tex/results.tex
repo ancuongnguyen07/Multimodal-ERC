@@ -1,0 +1,27 @@
+\section{Results}
+The experiments evaluated the performance of emotion recognition models using three different modality combinations: unimodal, bimodal, and trimodal approaches. The key metrics for evaluation were F1-score and accuracy. The following summarizes the results for each modality combination:
+
+\subsection{Summary Table}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|l|c|c|}
+\hline
+\textbf{Modality Type} & \textbf{Modality Combination} & \textbf{F1-score} & \textbf{Accuracy (\%)} \\ \hline
+\multirow{3}{*}{Unimodal} & Audio                         & 43.55             & 48.85                 \\ \cline{2-4}
+                          & Visual                        & 35.35             & 44.75                 \\ \cline{2-4}
+                          & Text                          & 57.52             & 59.77                 \\ \hline
+\multirow{3}{*}{Bimodal}  & Audio-Visual                  & 45.25             & 48.24                 \\ \cline{2-4}
+                          & Text-Audio                    & 57.61             & 59.39                 \\ \cline{2-4}
+                          & Text-Visual                   & 57.51             & 60.15                 \\ \hline
+Trimodal                  & Text-Audio-Visual             & 57.88             & 60.61                 \\ \hline
+\end{tabular}
+\caption{Performance summary across different modality combinations.}
+\label{tab:results}
+\end{table}
+
+The results summarized in Table~\ref{tab:results} demonstrate that integrating multiple modalities improves emotion recognition performance. While unimodal models showed reasonable accuracy, they struggled to capture the full complexity of emotional cues. Bimodal combinations, particularly those involving text, provided marginal improvements over their unimodal counterparts. The trimodal fusion \emph{(Text-Audio-Visual)} achieved the highest accuracy and F1-score, reflecting the benefits of leveraging complementary information across all three modalities.
+
+\subsection{Confusion Matrices and Class Performance}
+The confusion matrices reveal that dominant classes like \textit{Neutral} (Class 0) and \textit{Happy} (Class 1) consistently achieved high recall across all modalities due to their abundance in the dataset. In contrast, underrepresented emotions such as \textit{Fear} (Class 2) and \textit{Disgust} (Class 5) exhibited near-zero recall and were frequently misclassified as \textit{Neutral} or \textit{Sadness}. Misclassifications also occurred between similar emotions, such as \textit{Anger} (Class 3) and \textit{Sadness} (Class 4), particularly in unimodal and bimodal setups. While trimodal fusion reduced these ambiguities by leveraging complementary information, categories like \textit{Surprise} (Class 6) still faced confusion, often being misclassified as \textit{Neutral}.
+
+The model's tendency to default to the \textit{Neutral} class when uncertain highlights the impact of dataset imbalance on predictions. Addressing this issue through techniques like class weighting, oversampling, or advanced fusion methods, such as attention mechanisms, could enhance performance on rare and overlapping emotion categories.
