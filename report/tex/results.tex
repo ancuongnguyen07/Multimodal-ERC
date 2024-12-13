@@ -1,12 +1,12 @@
 \section{Results}
-The experiments evaluated the performance of emotion recognition models using three different modality combinations: unimodal, bimodal, and trimodal approaches. The key metrics for evaluation were F1-score and accuracy. The following summarizes the results for each modality combination:
+The experiments evaluated the performance of emotion recognition models using three different modality combinations: unimodal, bimodal, and trimodal approaches. The key metrics for evaluation were weighted F1-score and accuracy. The following summarizes the results for each modality combination:
 
 \subsection{Summary Table}
 \begin{table}[h!]
 \centering
 \begin{tabular}{|c|l|c|c|}
 \hline
-\textbf{Modality Type} & \textbf{Modality Combination} & \textbf{F1-score} & \textbf{Accuracy (\%)} \\ \hline
+\textbf{Type} & \textbf{Modality Combination} & \textbf{Weighted F1-score} & \textbf{Accuracy (\%)} \\ \hline
 \multirow{3}{*}{Unimodal} & Audio                         & 43.55             & 48.85                 \\ \cline{2-4}
                           & Visual                        & 35.35             & 44.75                 \\ \cline{2-4}
                           & Text                          & 57.52             & 59.77                 \\ \hline
@@ -25,3 +25,6 @@ The results summarized in Table~\ref{tab:results} demonstrate that integrating m
 The confusion matrices reveal that dominant classes like \textit{Neutral} (Class 0) and \textit{Happy} (Class 1) consistently achieved high recall across all modalities due to their abundance in the dataset. In contrast, underrepresented emotions such as \textit{Fear} (Class 2) and \textit{Disgust} (Class 5) exhibited near-zero recall and were frequently misclassified as \textit{Neutral} or \textit{Sadness}. Misclassifications also occurred between similar emotions, such as \textit{Anger} (Class 3) and \textit{Sadness} (Class 4), particularly in unimodal and bimodal setups. While trimodal fusion reduced these ambiguities by leveraging complementary information, categories like \textit{Surprise} (Class 6) still faced confusion, often being misclassified as \textit{Neutral}.
 
 The model's tendency to default to the \textit{Neutral} class when uncertain highlights the impact of dataset imbalance on predictions. Addressing this issue through techniques like class weighting, oversampling, or advanced fusion methods, such as attention mechanisms, could enhance performance on rare and overlapping emotion categories.
+
+The seven confusion figures are presented in the appendices~\ref{fig:confusion_matrices}, illustrating the classification performance across different modalities in the specified order.
+
