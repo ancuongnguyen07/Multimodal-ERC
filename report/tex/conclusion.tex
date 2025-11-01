@@ -1,0 +1,8 @@
+\section{Conclusion}
+This study explored the effectiveness of multimodal emotion recognition by combining text, audio, and visual data. The results highlight the value of multimodal approaches, with the trimodal configuration (text-audio-visual) achieving the highest performance. However, the improvements over text-only and bimodal models were marginal, suggesting limitations in the early fusion strategy used. Advanced fusion techniques like attention mechanisms may better exploit inter-modal interactions.
+
+The text modality proved to be the most reliable, both alone and in combination with other modalities, reflecting its richness in conveying emotional cues. In contrast, underrepresented emotions like \textit{Fear} and \textit{Disgust} showed near-zero recall and precision due to dataset imbalance. These findings emphasize the need for class balancing techniques, such as weighted loss functions or data augmentation, to improve the recognition of rare emotions.
+
+Misclassifications between similar emotions, such as \textit{Anger} and \textit{Sadness}, further underscore the limitations of the current feature extraction methods. The model's bias toward the dominant \textit{Neutral} class, influenced by dataset imbalance, also points to the need for more balanced datasets and context-aware modeling.
+
+In summary, while multimodal systems show promise, challenges remain in inter-modal fusion, class imbalance, and generalizability. Future work should focus on improving fusion strategies, addressing dataset limitations, and leveraging advanced architectures to enhance the robustness and applicability of emotion recognition models.

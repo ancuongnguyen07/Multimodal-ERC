@@ -1,0 +1,35 @@
+\section{Methods}
+In this project, we focus on a multi-modal approach to emotion recognition, utilizing audio, text, and video data. Our primary aim is to integrate features from these modalities in a manner that preserves their unique characteristics while capturing the inter-modal relationships. To achieve this, we employ an \textbf{early fusion} approach, where features from all modalities are concatenated before being fed into the classifier. Below, we describe the key aspects of our methodology:
+
+
+\paragraph{Feature Extraction}
+
+The feature extraction process for each modality was designed to maximize the quality and relevance of input data:
+
+\begin{itemize}
+    \item \textbf{Text Modality}: Features were derived using 300-dimensional \href{https://fasttext.cc}{FastText embeddings }  . These embeddings were further processed using a Convolutional Neural Network (CNN) to capture nuanced textual semantics and contextual information, building on advancements in natural language processing.
+    \item \textbf{Audio Modality}: Audio features were extracted using the \href{https://audeering.com/technology/opensmile}{openSMILE toolkit }, resulting in 6,373 initial features. These were reduced to 300 dimensions using L2-based feature selection, ensuring computational efficiency while retaining the most informative attributes for emotion detection.
+    \item \textbf{Visual Modality}: For video data, 342 features were extracted using a \href{https://github.com/liuzhuang13/DenseNet}{DenseNet architecture}   pre-trained on the Facial Emotion Recognition Plus (FER+) corpus. These features represent critical visual cues such as facial expressions and micro-movements relevant to emotional states.
+\end{itemize}
+ 
+
+\paragraph{\textbf{Early Fusion}}
+
+In this work, we utilize \textbf{early fusion} as the sole method for combining multi-modal features. Features from audio, text, and video modalities are concatenated into a unified representation and directly fed into the classifier. This approach ensures that the interactions between modalities are captured at the feature level while simplifying the architecture compared to decision-level fusion techniques.
+
+\paragraph{\textbf{Classifier}}
+
+We utilize the Bidirectional DialogueRNN with Attention \cite{dialogueRNN} as the backbone of our classification system. This variant of DialogueRNN has demonstrated superior performance and was implemented as the baseline for our experiments. It is a speaker-aware recurrent neural network designed specifically for emotion recognition in multi-party conversations.
+
+
+ \paragraph{\textbf{Dataset}}
+
+ To train and evaluate this model we used MELD (Multimodal emotionless dataset) \cite{meld}, this dataset is derived from over 1400 dialogues of the TV show Friends with more than 13.000 utterances, we used MELD because of its multimodal nature as it includes text, audio and visual data. The emotions we detect are: neutral, surprise, fear, sadness, joy, disgust and anger.
+
+
+\paragraph{\textbf{Evaluation}}
+
+The performance of our model is evaluated using weighted F1-scores and confusion matrices. We compare the results of our tri-modal model with the baseline unimodal and bimodal models provided by MELD . Additionally, we explore the individual contributions of each modality by training unimodal classifiers for text, audio, and video separately.
+
+
+ 

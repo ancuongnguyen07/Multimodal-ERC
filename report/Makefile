@@ -14,6 +14,7 @@ all: $(DIR_BUILD)/$(MAIN).pdf
 
 $(DIR_BUILD)/$(MAIN).pdf: $(TEXSRC) $(BIBSRC)
 	latexmk -pdf -pdflatex="texfot pdflatex " $(MAIN) -auxdir=$(DIR_BUILD) -outdir=$(DIR_BUILD)
+	cp $(DIR_BUILD)/$(MAIN).pdf pdf/
 
 draft: $(DRAFT_BUILD)/$(DRAFT).pdf
 

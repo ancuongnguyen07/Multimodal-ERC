@@ -1,0 +1,39 @@
+\section{Literature Study}
+
+Computers have become integral to daily life in areas such as healthcare, education,
+and entertainment. To interact effectively, machines must understand the emotional
+states of users. For example, in healthcare, recognizing emotions can help provide
+better support to patients, while in education, it enables personalized learning.
+Emotion recognition is thus vital for improving human-computer interaction. Research
+has explored various methods to recognize emotions using data sources like facial
+expressions, speech, text, and physiological signals. Among these, physiological
+signals are considered more objective and reliable~\cite{unimodal-to-multimodal}.
+Human emotions are broadly categorized into six fundamental types: happiness,
+sadness, fear, anger, disgust, and surprise, which form the basis for other derived
+emotions~\cite{basic-emotions}.
+
+Unimodal emotion recognition systems utilize data from a single source but often fail
+to fully capture the complexity of emotions. For instance, relying solely on facial
+expressions may yield inaccurate results due to external influences like lighting or
+occlusion. To address these limitations, researchers have developed multimodal
+emotion recognition systems that combine multiple data sources. These systems
+outperform unimodal methods by providing a more comprehensive understanding of
+emotions~\cite{multimodal-review, unimodal-to-multimodal}. The efficiency and
+accuracy of deep learning models have made them particularly popular in this field,
+especially for analyzing high-level features in facial images and text~\cite{multimodal-review}.
+
+There are three key multimodal fusion methods used in emotion recognition
+systems~\cite{multimodal-review}:
+\begin{itemize}
+\item \textbf{Feature-level fusion}: Combines features from different modalities
+into a unified representation, allowing joint processing by the classifier.
+\item \textbf{Decision-level fusion}: Trains classifiers separately for each
+modality and merges their outputs using a fusion rule.
+\item \textbf{Hybrid fusion}: Combines aspects of feature-level and decision-level
+fusion to leverage their respective strengths.
+\end{itemize}
+Feature-level fusion is the most widely adopted approach in deep learning-based
+systems, as it integrates rich and complementary information from multiple modalities
+early in the processing pipeline, leading to higher accuracy by capturing subtle
+cross-modal emotional cues~\cite{multimodal-review}.
+

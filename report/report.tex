@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage[parfill]{parskip}
@@ -18,6 +19,8 @@
 
 \usepackage{longtable}
 \usepackage{float}
+
+\usepackage{multirow}
 
 % Define a custom color
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
@@ -46,7 +49,11 @@
 
 \title{ELEC-E5510: Speech Recognition\\
     \large Project report: Multimodal Emotion Recognition in Conversations}
-\author{Cuong Nguyen (101559968)}
+\author{
+Cuong Nguyen (101559968), Raihan Gafur (101555441),
+\\Daniel Campillejo Fernández-Calvillo (102591488)
+%Add your name and student number here%
+}
 
 \newcommand{\inlinemaketitle}{{\let\newpage\relax\maketitle}}
 
@@ -66,6 +73,7 @@
 % ...
 % \include{./tex/task2.tex}
 \include{tex/intro.tex}
+\include{tex/lit-study}
 \include{tex/methods.tex}
 \include{tex/experiments.tex}
 \include{tex/results.tex}

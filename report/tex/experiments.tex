@@ -1,0 +1,40 @@
+\section{Experiments}
+This section provides a detailed description of the experimental setup, 
+including data loading, training, and testing procedures. The goal is to 
+enable replication of our experiments by individuals familiar with the course 
+material. A quick tutorial for training and testing is available 
+\href{https://github.com/ancuongnguyen07/Multimodal-ERC/blob/master/code/README.md}{here}.
+
+The \href{https://github.com/declare-lab/conv-emotion/tree/master/DialogueRNN}{baseline} 
+implementation lacks visual modality support and flexibility in handling 
+multiple modality combinations. Our contributions address these gaps by 
+incorporating visual features into the data loader and enhancing training 
+and testing scripts for usability and transparency.
+
+We conducted training and testing on the following modality combinations: audio, text, visual, text-audio, text-visual, audio-visual, text-audio-visual.
+
+\subsection{Data Loading}
+We utilized a pre-extracted pickle file containing MELD dataset features 
+across three modalities and their alignment with video IDs, which was 
+downloaded from 
+\href{https://github.com/zerohd4869/MM-DFN/blob/main/data/meld/MELD_features_raw1.pkl}{this source}.
+
+To support diverse modality combinations, we modified the data loader's 
+functions for item returning and batch collation to handle varying numbers 
+of modalities and feature types. This enhancement ensures flexibility in 
+experimentation.
+
+\subsection{Training}
+Our training script extends the baseline implementation by adding support for 
+multiple modality combinations and providing detailed metrics for each epoch. 
+The best performance metrics, achieved at the epoch with minimal error, are 
+reported. To ensure reproducibility, the random seed is fixed at 1234.
+
+An example command to train the model is shown in \autoref{lst:training-script}
+
+\subsection{Testing}
+We implemented a custom testing script for model evaluation. The script uses 
+a saved model to evaluate performance on the test set. The final performance 
+may differ from training due to metric calculations on different epochs.
+
+To test the model, execute the command in \autoref{lst:testing-script}
